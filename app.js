@@ -11,6 +11,8 @@ mongoose.connect("mongodb://localhost:27017/yelp_camp", {useUnifiedTopology: tru
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 
+seedDB();
+
 app.get("/", (req, res) => {
     res.render("landing");
 });
@@ -21,7 +23,7 @@ app.get("/campgrounds", (req, res) => {
 		if(err){
 			console.log(err);
 		} else {
-			res.render("INDEX.ejs", {campgrounds:allCampgrounds});
+			res.render("campgrounds/INDEX", {campgrounds:allCampgrounds});
 		}
 	});
 });
@@ -45,7 +47,7 @@ app.post("/campgrounds", (req, res) =>{
 
 // NEW - show form to create new campground
 app.get("/campgrounds/new", (req, res)=> {
-    res.render("new");
+    res.render("campgrounds/new");
 });
 
 // SHOW - shows more info about a specific campground
@@ -55,8 +57,46 @@ app.get("/campgrounds/:id", (req, res)=>{
 		if(err){
 			console.log(err);
 		} else {
-			console.log(foundCampground);
-			res.render("show", {campground: foundCampground});
+			res.render("campgrounds/show", {campground: foundCampground});
+		}
+	});
+});
+
+// ======================
+// COMMENTS ROUTE
+// ======================
+
+app.get("/campgrounds/:id/comments/new", function (req, res){ 
+	Campground.findById(req.params.id, function(err, campground){
+	if(err){
+		console.log(err);
+	} else {
+		res.render("comments/new", {campground: campground});
+	}
+		
+	});
+});
+
+app.post("/campgrounds/:id/comments", function(req, res){
+	//look up campground using ID
+	Campground.findById(req.params.id, function(err, campground){
+		if(err){
+			console.log(err);
+			res.redirect("/campgrounds");
+		}else {
+			//create new comment
+			Comment.create(req.body.comment, function(err,comment){
+				if(err){
+					console.log(err);
+				} else {
+					//associate new comment to campground 
+					campground.comments.push(comment);
+					campground.save();
+					console.log("New Comment Added");
+					//redirect back to campground show page
+					res.redirect("/campgrounds/" + campground._id);
+				}
+			});
 		}
 	});
 });

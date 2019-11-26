@@ -4,9 +4,9 @@ const mongoose = require("mongoose"),
 
 const data = [
 	{
-		name: "KĪPAHULU CAMPGROUND",
+		name: "Kipahulu Campground",
 	 	image: "https://purewows3.imgix.net/images/articles/2019_04/Ki__772_pahulu_Campground_maui_hawaii.jpg?auto=format,compress&cs=strip",
-		description: "blah blah blah"	
+		description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque aliquam saepe beatae sapiente natus dolorum ad nostrum distinctio sequi, accusamus ipsum ab voluptas ex temporibus rerum illo praesentium aut perferendis."	
 	},
 	{
 		name: "OZ Farm",
@@ -16,17 +16,12 @@ const data = [
 	{
 		name: "BARTLETT COVE CAMPGROUND",
 		image: "https://purewows3.imgix.net/images/articles/2019_04/bartlett_cove_campground_glacier_bay_alaska.jpg?auto=format,compress&cs=strip", 
-		description: "You’ll have to go on a short stroll to access Bartlett Cove Campground, a walk-in-only campsite in Glacier Bay, Alaska"
+		description: "You’ll have to go on a short stroll to access Bartlett Cove Campground, a walk-in-only campsite in Glacier Bay, Alaska. Just make sure you bring layers and a Furnice!"
 	},
 	    {
         name: "Cloud's Rest", 
         image: "https://farm4.staticflickr.com/3795/10131087094_c1c0a1c859.jpg",
-        description: "blah blah blah"
-    },
-    {
-        name: "Desert Mesa", 
-        image: "https://farm4.staticflickr.com/3859/15123592300_6eecab209b.jpg",
-        description: "blah blah blah"
+        description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque aliquam saepe beatae sapiente natus dolorum ad nostrum distinctio sequi, accusamus ipsum ab voluptas ex temporibus rerum illo praesentium aut perferendis."
     }
 ] 
 
