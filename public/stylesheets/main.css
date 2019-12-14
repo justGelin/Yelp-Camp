@@ -1,12 +1,28 @@
 .thumbnail img {
-	width: 100%;
-	
+	width: 100%;	
 }
 
 .thumbnail {
 	padding: 0;
 }
 
-.caption-full {
+.thumbnail .caption-full {
 	padding: 9px;
+}
+
+#delete-form {
+	display: inline;
+}
+
+. alert {
+	text-align: center;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.footer {
+	padding-left: 10px;
 }

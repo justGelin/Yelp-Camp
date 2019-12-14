@@ -1,10 +1,38 @@
 <% include partials/header %>
-<h1>Sign Up</h1>
-<form action="/register" method="POST">
-	<input name="username" placeholder="username" type="text">
-	<input name="password" placeholder="password" type="password">
-	<button>Sign Up</button>
-</form>
-
-<p><a href="/login">Login</a><p>
+<div class="row">
+    <h1 style="text-align: center">Sign Up</h1>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/register" method="post">
+            <div class="form-group">
+				<label for="username">Username</label>
+                <input class="form-control" type="text" name="username" placeholder="username">
+            </div>
+            <div class="form-group">
+				<label for="password">Password</label>
+                <input class="form-control" type="password" name="password" placeholder="password">
+            </div>
+			<div class="form-group">
+				<label for="username">First Name</label>
+                <input class="form-control" type="text" name="firstName" placeholder="username">
+            </div>
+			<div class="form-group">
+				<label for="username">Last Name</label>
+                <input class="form-control" type="text" name="lastName" placeholder="username">
+            </div>
+			<div class="form-group">
+				<label for="username">Email</label>
+                <input class="form-control" type="text" name="email" placeholder="ex: john@doe.com">
+            </div>
+			<hr>
+			 <div class="form-group">
+				 <label for="adminCode">Please Enter Admin Code (if Applicable)</label>
+                <input class="form-control" type="email" name="adminCode" placeholder="Admin Code">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+            </div>
+        </form>
+        <a href="/campgrounds">Go Back</a>
+    </div>
+</div>
 <% include partials/footer %>
